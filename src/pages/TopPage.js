@@ -3,6 +3,8 @@ import Title from "../components/Title";
 import Selector from "../components/Selector";
 import Results from "../components/Results";
 
+// countriesJson:国の一覧のjsonファイル, setCountry：国をセットするためのuseState(関数), countryData, loading:load状況
+
 const TopPage = ({ countriesJson, setCountry, countryData, loading }) => {
     return (
         <div className="top-page-container">
