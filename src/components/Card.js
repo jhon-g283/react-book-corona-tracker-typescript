@@ -1,3 +1,5 @@
+// 世界単位での国ごとの感染者数を表示させるコンポーネント
+// 国数だけループで項目を増やしていく
 const Card = ({ allCountriesData }) => {
     return (
         <div className="card-container">
@@ -15,3 +17,5 @@ const Card = ({ allCountriesData }) => {
 };
 
 export default Card;
+
+

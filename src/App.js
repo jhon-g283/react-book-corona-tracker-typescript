@@ -22,10 +22,13 @@ function App() {
     newRecovered: "",    
     totalRecovered: "",  
   });
+  
+  // 世界の感染者数（サマリー）
   const [allCountriesData, setAllCountriesData] = useState([]);
 
   useEffect(() => {
     const getCountryData = () => {
+      console.log("useEffect : country");
         setLoading(true); //ロード切り替え
 
         fetch(`https://api.covid19api.com/country/${country}`) 
@@ -51,6 +54,7 @@ function App() {
     getCountryData();
   }, [country])
 
+  // 世界の感染者数を国別で取得
   useEffect(() => {  
       fetch("https://api.covid19api.com/summary")
       .then(res => res.json())
@@ -58,9 +62,14 @@ function App() {
       .catch(err => alert("エラーが発生しました。ページをリロードして、もう一度トライしてください。")); 
   }, []); 
   return (
+    // ReactRouter
+    // BrowserRouterとSwitchでページ生成に使用するコンポーネントを挟んで
+    // Routeで分岐させる部分を挟む　中のpathにパスを記載する。
     <BrowserRouter>   
       <Switch>        
-          <Route exact path="/">    
+          <Route exact path="/">   
+           {/*国ごとの状況  */}
+           <p>国ごと</p>
               <TopPage 
               countriesJson={countriesJson}//Jsonを渡す
                setCountry={setCountry}//useStateを渡している？
@@ -68,9 +77,14 @@ function App() {
                 loading={loading} //load状況
                 />
           </Route>  
-          
-          <Route exact path="/world">  
-              <WorldPage allCountriesData={allCountriesData} />            
+          {/* 世界の状況のタブ */}
+          <Route exact path="/world"> 
+              <p>World</p> 
+              <WorldPage 
+              allCountriesData={allCountriesData} //全体の感染者数データ
+              
+              
+              />            
           </Route>      
       </Switch>       
   </BrowserRouter>   

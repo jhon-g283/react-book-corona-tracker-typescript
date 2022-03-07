@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+// ヘッダーのコンポーネント
+// リンク付きのタグで切り替えることができる。
 const Header = () => {
     return (
         <div className="header">

@@ -1,3 +1,5 @@
+// タイトル表示用のコンポーネント
+
 const Title = () => {
     return (
         <div>
@@ -7,3 +9,5 @@ const Title = () => {
 };
 
 export default Title;
+
+// 単なる関数のエクスポートのみ

@@ -1,5 +1,7 @@
+// 国単位の感染者数を表示するコンポーネント
 import Loading from "./Loading"; 
 
+// countryData：国単位の感染者数, loading：ロード中かどうか
 const Results = ({ countryData, loading }) => {
     const { date, newConfirmed, totalConfirmed, newRecovered, totalRecovered } = countryData;
     return (
