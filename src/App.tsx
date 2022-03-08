@@ -5,26 +5,42 @@ import TopPage from "./pages/TopPage";
 import WorldPage from "./pages/WorldPage";
 import './App.css';
 
+type countryDataType={
+  date: string,            
+    newConfirmed: number,     
+    totalConfirmed:number,   
+    newRecovered:number,    
+    totalRecovered: number  
+
+}
+
 function App() {
   // UseState類でStateは管理
-  const [loading, setLoading] = useState(false);//ロード状況
+  // const [loading, setLoading] = useState(false);//ロード状況・・・UseStateに関してはtypeScriptにするときに<型>をつけてあげる
+  const [loading, setLoading] = useState<boolean>(false);//ロード状況
 
   //選択している国名、初期値は日本
   // コンポーネントに引数で渡していって末端のセレクターの変更イベントで動かす
-  const [country, setCountry] = useState("japan");
+  const [country, setCountry] = useState<string>("japan");
 
   // 国別の感染者数などの数値
   // 受信時（fetch）に毎回動かす
-  const [countryData, setCountryData] = useState({
+  //上側で指定したオブジェクトを型とする：countryDataType
+  const [countryData, setCountryData] = useState<countryDataType>({
     date: "",            
-    newConfirmed: "",     
-    totalConfirmed: "",   
-    newRecovered: "",    
-    totalRecovered: "",  
+    newConfirmed: 0,     
+    totalConfirmed: 0,   
+    newRecovered: 0,    
+    totalRecovered: 0  
   });
   
   // 世界の感染者数（サマリー）
-  const [allCountriesData, setAllCountriesData] = useState([]);
+  const [allCountriesData, setAllCountriesData] = useState([{
+    Country:"",
+    NewConfirmed:0,
+    TotalConfirmed:0
+    ///////////直指定//////////////
+  }]);
 
   useEffect(() => {
     const getCountryData = () => {

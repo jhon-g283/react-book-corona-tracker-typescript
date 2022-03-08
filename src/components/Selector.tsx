@@ -1,7 +1,17 @@
 // セレクターのコンポーネント
 // Jsonから取り込んだリストの数だけ選択できるセレクターを作成
 
-const Selector = ({ setCountry, countriesJson }) => {
+// propsの形を宣言
+// countriesJson:国の一覧のjsonファイル, setCountry：国をセットするためのuseState(関数)
+type SelectorType = {
+    setCountry:React.Dispatch<React.SetStateAction<string>>,
+    countriesJson:{
+        Country:string,
+        Slug:string
+    }[]
+}
+
+const Selector = ({ setCountry, countriesJson }:SelectorType) => {
 
     console.log("setCountry");
     

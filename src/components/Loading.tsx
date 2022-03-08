@@ -6,3 +6,5 @@ const Loading = () => {
 };
 
 export default Loading;
+
+// 単なる関数のエクスポートのみなのでそのままタイプスクリプトに変換
