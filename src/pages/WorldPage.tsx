@@ -16,7 +16,7 @@ interface WorldPageType {
   
 const WorldPage = ({ allCountriesData}:WorldPageType) => {
     console.log("allCountriesData");
-    console.log(allCountriesData);
+    // console.log(allCountriesData);
     return (
         <div className="world-page-container">
             <p>世界単位</p>
