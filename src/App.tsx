@@ -11,8 +11,17 @@ type countryDataType={
     totalConfirmed:number,   
     newRecovered:number,    
     totalRecovered: number  
-
 }
+
+// typeではなくinterfaceを使用して型を定義することも可能
+interface SingleCountryDataType {
+  Country :string,
+  NewConfirmed:number,
+  TotalConfirmed:number
+}
+
+// オブジェクト型の配列なのでextendでSingleCountryDataTypeの配列にする。
+interface AllCountryDataTypeArray extends Array<SingleCountryDataType>{}
 
 function App() {
   // UseState類でStateは管理
@@ -35,11 +44,12 @@ function App() {
   });
   
   // 世界の感染者数（サマリー）
-  const [allCountriesData, setAllCountriesData] = useState([{
+  //usestateでは型はUseStateの後、初期値は括弧内で指定
+  const [allCountriesData, setAllCountriesData] = useState<AllCountryDataTypeArray>([{
     Country:"",
     NewConfirmed:0,
     TotalConfirmed:0
-    ///////////直指定//////////////
+    
   }]);
 
   useEffect(() => {

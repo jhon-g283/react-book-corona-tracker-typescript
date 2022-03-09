@@ -1,6 +1,20 @@
 // 世界単位での国ごとの感染者数を表示させるコンポーネント
 // 国数だけループで項目を増やしていく
-const Card = ({ allCountriesData }) => {
+
+interface SingleCountryDataType {
+  Country :string,
+  NewConfirmed:number,
+  TotalConfirmed:number
+}
+
+// 
+interface CardType {
+  allCountriesData:Array<SingleCountryDataType>
+}
+
+
+const Card = ({ allCountriesData }:CardType) => {
+   console.log(allCountriesData);
     return (
         <div className="card-container">
             {allCountriesData.map((singleData, index) =>

@@ -3,7 +3,20 @@ import Header from "../components/Header";
 import Title from "../components/Title";
 import Card from "../components/Card";  
 
-const WorldPage = ({ allCountriesData }) => {
+interface SingleCountryDataType {
+    Country :string,
+    NewConfirmed:number,
+    TotalConfirmed:number
+  }
+  
+  // 
+interface WorldPageType {
+    allCountriesData:Array<SingleCountryDataType>
+}
+  
+const WorldPage = ({ allCountriesData}:WorldPageType) => {
+    console.log("allCountriesData");
+    console.log(allCountriesData);
     return (
         <div className="world-page-container">
             <p>世界単位</p>
