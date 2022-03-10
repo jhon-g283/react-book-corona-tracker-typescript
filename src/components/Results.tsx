@@ -1,18 +1,20 @@
 // 国単位の感染者数を表示するコンポーネント
 import Loading from "./Loading"; 
 
+import {ResultsType} from "../types"
+
 // propsの形宣言
 // countryData：国単位の感染者数, loading：ロード中かどうか
-type ResultsType = {
-    countryData:{
-        date: string,            
-        newConfirmed: number,     
-        totalConfirmed:number,   
-        newRecovered:number,    
-        totalRecovered: number,  
-    },
-    loading:boolean
-}
+// type ResultsType = {
+//     countryData:{
+//         date: string,            
+//         newConfirmed: number,     
+//         totalConfirmed:number,   
+//         newRecovered:number,    
+//         totalRecovered: number,  
+//     },
+//     loading:boolean
+// }
 
 // countryData：国単位の感染者数, loading：ロード中かどうか
 const Results = ({ countryData, loading }:ResultsType) => {

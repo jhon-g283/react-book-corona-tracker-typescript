@@ -5,7 +5,11 @@ import TopPage from "./pages/TopPage";
 import WorldPage from "./pages/WorldPage";
 import './App.css';
 
-type countryDataType={
+// 型情報を定義したファイルから型定義を取り込み
+import {countryDataType,AllCountryDataTypeArray} from "./types"
+
+/**　外部取り込みにしたので不要
+ * type countryDataType={
   date: string,            
     newConfirmed: number,     
     totalConfirmed:number,   
@@ -22,6 +26,8 @@ interface SingleCountryDataType {
 
 // オブジェクト型の配列なのでextendでSingleCountryDataTypeの配列にする。
 interface AllCountryDataTypeArray extends Array<SingleCountryDataType>{}
+ */
+
 
 function App() {
   // UseState類でStateは管理

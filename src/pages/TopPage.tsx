@@ -5,6 +5,10 @@ import Title from "../components/Title";
 import Selector from "../components/Selector";
 import Results from "../components/Results";
 
+// 型情報を定義したファイルから型定義を取り込み
+import {TopPageType} from "../types"
+
+/** 
 // propsに関しても型の設定が必要になる。
 type TopPageType ={
     // countriesJson:国の一覧のjsonファイル, setCountry：国をセットするためのuseState(関数), countryData：国別の感染者数, loading:load状況
@@ -22,7 +26,9 @@ type TopPageType ={
         totalRecovered: number,  
     }, 
     loading:boolean
-}
+} 
+ * 
+*/
 
 // countriesJson:国の一覧のjsonファイル, setCountry：国をセットするためのuseState(関数), countryData：国別の感染者数, loading:load状況
 // typescriptにするときはpropsも型の情報を詳細に書き出して、宣言した型を指定してあげる。
