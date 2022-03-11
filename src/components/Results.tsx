@@ -1,6 +1,7 @@
 // 国単位の感染者数を表示するコンポーネント
 import Loading from "./Loading"; 
 
+// 型データをインポート
 import {ResultsType} from "../types"
 
 // propsの形宣言

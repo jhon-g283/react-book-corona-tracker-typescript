@@ -22,7 +22,7 @@ export type countryDataType={
   type CountriesJsonType={
     Country:string,
     Slug:string
-}
+}[]
 
 // TopPage.jsの型情報
 // propsに関しても型の設定が必要になる。
@@ -87,5 +87,13 @@ export interface WorldPageType {
   allCountriesData:Array<SingleCountryDataType>
 }
 
-// の型情報
+
+
+// Card.jsの型情報
+export interface CardType {
+  allCountriesData:Array<SingleCountryDataType>
+}
+
+
+
 

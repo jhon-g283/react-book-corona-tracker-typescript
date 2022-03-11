@@ -1,7 +1,12 @@
 // 世界単位での国ごとの感染者数を表示させるコンポーネント
 // 国数だけループで項目を増やしていく
 
-interface SingleCountryDataType {
+//外部から型をインポート
+import {CardType} from "../types"
+/** 
+ * 
+ * 
+ *interface SingleCountryDataType {
   Country :string,
   NewConfirmed:number,
   TotalConfirmed:number
@@ -11,6 +16,9 @@ interface SingleCountryDataType {
 interface CardType {
   allCountriesData:Array<SingleCountryDataType>
 }
+ * 
+*/
+
 
 
 const Card = ({ allCountriesData }:CardType) => {
